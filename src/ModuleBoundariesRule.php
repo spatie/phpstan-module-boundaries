@@ -53,8 +53,8 @@ class ModuleBoundariesRule implements Rule
 
         return [
             RuleErrorBuilder::message(
-		        'Internal class ' . $nodeClassName . ' was used in ' . $callerModule . ' module.'
-	        )->build(),
+                'Internal class ' . $nodeClassName . ' was used in ' . $callerModule . ' module.'
+            )->build(),
         ];
     }
 
