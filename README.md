@@ -1,13 +1,34 @@
 
 [<img src="https://github-ads.s3.eu-central-1.amazonaws.com/support-ukraine.svg?t=1" />](https://supportukrainenow.org)
 
-# This is my package phpstan-module-boundaries
+# A PhpStan plugin to keep make classes private for their contexts
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/spatie/phpstan-module-boundaries.svg?style=flat-square)](https://packagist.org/packages/spatie/phpstan-module-boundaries)
 [![Tests](https://github.com/spatie/phpstan-module-boundaries/actions/workflows/run-tests.yml/badge.svg?branch=main)](https://github.com/spatie/phpstan-module-boundaries/actions/workflows/run-tests.yml)
 [![Total Downloads](https://img.shields.io/packagist/dt/spatie/phpstan-module-boundaries.svg?style=flat-square)](https://packagist.org/packages/spatie/phpstan-module-boundaries)
 
-This is where your description should go. Try and limit it to a paragraph or two. Consider adding a small example.
+This plugin is just a proof of concept for now. The goal is to have a linter that allows the developer to specify which classes can and can't be used across contexts. For example, a `StripePayment` class that's an implementation detail of the `Payment` context shouldn't be used in the `Order` context.
+
+```
+$ ./vendor/bin/phpstan analyse
+Note: Using configuration file /Users/sebastiandedeyne/Sites/phpstan-module-boundaries/phpstan.neon.
+ 4/4 [▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓] 100%
+
+ ------ -----------------------------------------------------------------------
+  Line   Context/Order/Order.php
+ ------ -----------------------------------------------------------------------
+  21     Internal class App\Context\Payment\Internal\StripePayment was used in
+         Order module.
+ ------ -----------------------------------------------------------------------
+
+
+
+ [ERROR] Found 1 error
+```
+
+In this bare-bones implementation, classes nested in an `Internal` namespace aren't allowed to be used in other context. In the future, I'll probably provide an `#[Internal]` `#[Expose]` attribute to flag classes as (in)accessible for other contexts.
+
+This idea is inspired by Java's class visibility. In Java, a class is only visible in the package it lives in. You need to explicitly make it `public` to allow others to use it.
 
 ## Support us
 
