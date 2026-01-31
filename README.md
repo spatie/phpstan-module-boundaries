@@ -1,6 +1,3 @@
-
-[<img src="https://github-ads.s3.eu-central-1.amazonaws.com/support-ukraine.svg?t=1" />](https://supportukrainenow.org)
-
 # A PhpStan plugin to keep make classes private for their contexts
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/spatie/phpstan-module-boundaries.svg?style=flat-square)](https://packagist.org/packages/spatie/phpstan-module-boundaries)
