@@ -29,7 +29,7 @@ This idea is inspired by Java's class visibility. In Java, a class is only visib
 
 ## Support us
 
-[<img src="https://github-ads.s3.eu-central-1.amazonaws.com/phpstan-module-boundaries.jpg?t=1" width="419px" />](https://spatie.be/github-ad-click/phpstan-module-boundaries)
+[<img src="https://spatie.be/github-ad-image/phpstan-module-boundaries.jpg" width="419px" />](https://spatie.be/github-ad-click/phpstan-module-boundaries)
 
 We invest a lot of resources into creating [best in class open source packages](https://spatie.be/open-source). You can support us by [buying one of our paid products](https://spatie.be/open-source/support-us).
 
